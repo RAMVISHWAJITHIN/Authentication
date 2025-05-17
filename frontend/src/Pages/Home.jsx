@@ -34,7 +34,7 @@ function Home() {
         return;
       }
 
-      const res = await axios.get('https://authenticationapi-eight.vercel.app/products', {
+      const res = await axios.get('http://localhost:3000/products', {
         headers: {
           Authorization: `Bearer ${token}`
         },

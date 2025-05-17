@@ -22,7 +22,7 @@ function Login() {
     e.preventDefault();
     const { email, password } = formData;
     try {
-      const res = await axios.post('https://authenticationapi-eight.vercel.app/auth/login', { email, password });
+      const res = await axios.post('http://localhost:3000/auth/login', { email, password });
       // console.log(res?.data);
 
     if (res.data.success) {
