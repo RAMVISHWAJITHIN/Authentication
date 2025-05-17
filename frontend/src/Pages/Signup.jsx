@@ -23,7 +23,7 @@ const Signup = () => {
   e.preventDefault();
   const { name, email, password } = formData;
   try {
-    const res = await axios.post('http://authenticationapi-eight.vercel.app/auth/signup', { name, email, password });
+    const res = await axios.post('https://authenticationapi-eight.vercel.app/auth/signup', { name, email, password });
 
     const sentData = JSON.parse(res.config.data);
     // console.log("Sent Name:", sentData.name); 
