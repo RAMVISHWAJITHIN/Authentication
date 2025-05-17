@@ -26,29 +26,29 @@ function Home() {
     toast.success("Logout successful!");
   };
 
-  // const fetchProducts = async () => {
-  //   try {
-  //     const token = localStorage.getItem('token');
-  //     if (!token) {
-  //       console.warn('No token found in localStorage');
-  //       return;
-  //     }
+  const fetchProducts = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        console.warn('No token found in localStorage');
+        return;
+      }
 
-  //     const res = await axios.get('http://localhost:3000/products', {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`
-  //       },
-  //     });
+      const res = await axios.get('http://localhost:3000/products', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+      });
 
-  //     setProducts(res.data);
-  //   } catch (err) {
-  //     console.error('Error fetching products:', err);
-  //   }
-  // };
+      setProducts(res.data);
+    } catch (err) {
+      console.error('Error fetching products:', err);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, []);
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -57,7 +57,7 @@ function Home() {
           Welcome{user?.name ? `, ${user.name}` : ''}!
         </h1>
         <p className="text-gray-600 mb-4">You're now logged in.</p>
-{/* 
+
         <div>
           {products.length === 0 && <p>No products found.</p>}
           {products.map((item, index) => (
@@ -66,7 +66,7 @@ function Home() {
               <li><strong>Price:</strong> ${item.price}</li>
             </ul>
           ))}
-        </div> */}
+        </div>
 
         {user && (
           <button
